@@ -4,6 +4,8 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    outputs:
+      deploy_env: ${{ env.deploy }}
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -19,6 +21,9 @@ jobs:
 
   check-bats-version:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: ${{ fromJson(needs.Explore-GitHub-Actions.outputs.deploy_env).environment}}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
@@ -26,3 +31,4 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+      - run: echo "🍏 This job's status is ${{ job.status }}."
