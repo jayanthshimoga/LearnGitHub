@@ -1,13 +1,11 @@
-# name: learn-github-actions
-# run-name: Triggering Git Hib Actions Learning workflow
-# on: [push]
-# jobs:
-#   check-bats-version:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v4
-#       - uses: actions/setup-node@v3
-#         with:
-#           node-version: '14'
-#       - run: npm install -g bats
-#       - run: bats -v
+name: learn-github-actions
+run-name: Triggering Git Hib Actions Learning workflow
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # This step checks out a copy of your repository.
+      - uses: actions/checkout@v4
+      # This step references the directory that contains the action.
+      - uses: ./.github/actions/hello-world-action
