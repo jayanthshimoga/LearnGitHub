@@ -1,0 +1,8 @@
+name: Action Pack
+run-name: ${{ github.actor }} is Action Pack
+on: [push]
+jobs:
+  my_first_job:
+    steps:
+      - name: My first step
+        uses: actions/setup-node@v3
