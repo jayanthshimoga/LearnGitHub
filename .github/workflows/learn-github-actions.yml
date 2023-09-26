@@ -1,5 +1,5 @@
 name: learn-github-actions
-run-name: Triggering Git Hib Actions Learning workflow
+run-name: Triggering Git Hub Actions Learning workflow
 on: [push]
 jobs:
   build:
