@@ -1,8 +1,20 @@
-name: GitHub Action Action
-run-name: GitHub Action Hello World
-on: [push]
-jobs:
-  my_first_job:
-    steps:
-      - name: My first step
-        uses: actions/setup-node@v3
+name: aaa
+description: aaa
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
+runs:
+  using: "composite"
+  steps:
+      - id: random-number-generator
+        run: echo "random-id=$(echo $RANDOM)" >> $GITHUB_OUTPUT
+        shell: bash
+inputs:
+  num-octocats:
+    description: 'Number of Octocats'
+    required: false
+    default: '1'
+  octocat-eye-color:
+    description: 'Eye color of the Octocats'
+    required: true
