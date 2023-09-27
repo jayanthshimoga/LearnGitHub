@@ -1,0 +1,12 @@
+name: First Workflow
+on: [workflow_dispatch]
+jobs: 
+  first_job:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: first step
+        run: echo "Happy Birthday Waffle!"
+      - name: second step
+        run: |
+          echo "Stay Happy Always :)"
+          echo "God Bless you :)"
