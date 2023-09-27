@@ -1,6 +1,6 @@
 name: GitHub Action Demo
 run-name: GitHub Action Demo triggered by - ${{ github.actor }}
-on: [push]
+on: [workflow_dispatch]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest

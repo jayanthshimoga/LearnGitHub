@@ -1,6 +1,6 @@
 name: Learn GitHub Actions
 run-name: Learn GitHub Actions
-on: [push]
+on: [workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
