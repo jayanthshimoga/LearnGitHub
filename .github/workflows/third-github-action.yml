@@ -12,4 +12,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Setup Environment
+              shell: bash
               run: pyb
