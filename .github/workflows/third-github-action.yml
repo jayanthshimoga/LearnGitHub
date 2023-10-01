@@ -13,4 +13,4 @@ jobs:
         steps:
             - name: Setup Environment
               shell: bash
-              run: pyb
+              run: python --version
